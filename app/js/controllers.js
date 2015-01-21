@@ -14,15 +14,18 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', fun
     };    
 
     $scope.deleteTask = function () { 
+        var oldTasks = $scope.tasks;
+        $scope.tasks = [];
 
-        for (var i = 0; i <= $scope.tasks.length; i++) {
-            console.log($scope.tasks[i].done);
-            if ($scope.tasks[i].done == "true")          
-             delete $scope.tasks[i];
-        }
-
-       if($scope.count > 0)
-            $scope.count--;
+        angular.forEach(oldTasks, function(task) {
+            if (!task.done)
+            {
+                $scope.tasks.push(task);
+                if ($scope.count > 0)
+                    $scope.count--;
+            } 
+        });
+        
     };    
 
 }]);
