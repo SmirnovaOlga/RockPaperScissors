@@ -4,12 +4,25 @@
 
 var app = angular.module('toDoList.controllers', []);
 app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http) {
-  
+   
+    $scope.tasks = [{"text" : "clean", "done" : false}];
+    $scope.count = 1;
 
-    $scope.addTask = function () { 
+    $scope.addTask = function () {         
+       $scope.tasks.push({"text" : $scope.newtask, "done" : false});
+       $scope.count++;
+    };    
 
-       $(".tasks-list").append("<div class='checkbox'><label><input ng-change='myStyle={'text-decoration': 'line-through'}' ng-model='done'  type='checkbox'><p ng-style='myStyle'>" + $scope.task + "</p></label></div>");
+    $scope.deleteTask = function () { 
 
+        for (var i = 0; i <= $scope.tasks.length; i++) {
+            console.log($scope.tasks[i].done);
+            if ($scope.tasks[i].done == "true")          
+             delete $scope.tasks[i];
+        }
+
+       if($scope.count > 0)
+            $scope.count--;
     };    
 
 }]);

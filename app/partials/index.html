@@ -1,19 +1,19 @@
 <form class="to-do-list">  
-<div class="tasks-list">
-    <div class="checkbox">
-      <label>
-        <input ng-change="myStyle={'text-decoration': 'line-through'}" ng-model="done" type="checkbox"><p ng-style="myStyle">Clean room </p>
-      </label>
-    </div>
-    <div class="checkbox">
-      <label>
-        <input ng-change="myStyle={'text-decoration': 'line-through'}" ng-model="done"  type="checkbox"><p ng-style="myStyle"> Shopping </p>
-      </label>     
-    </div>  
+<div>
+
+<button type="submit" ng-click="deleteTask()" class="btn btn-danger">Delete task</button>
+    <p class="title">List of {{ count }} tasks: </p>
+    <ul class="tasks-list">
+        <li ng-repeat="task in tasks">
+          <input type="checkbox" ng-model="task.done">
+          <span class="done-{{task.done}}">{{task.text}}</span>
+        </li>
+      </ul>
+
   </div>
    <div class="form-group">
     <label for="Input task">Input task</label>
-    <input type="text" ng-model="task" class="form-control" id="inputTask" placeholder="Enter task">
+    <input type="text" ng-model="newtask" class="form-control" id="inputTask" placeholder="Enter task">
   </div>
   <button type="submit" ng-click="addTask()" class="btn btn-default">Submit</button>
 </form>
