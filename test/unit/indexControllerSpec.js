@@ -1,4 +1,4 @@
-describe('githubList', function () {
+describe('toDoList', function () {
     describe('IndexController', function () {
 
         var controller, scope;
@@ -15,7 +15,7 @@ describe('githubList', function () {
 
         it('should have undefined githubList scope variable', function () {
 
-            expect(controller.githubList).not.toBeDefined();
+            expect(controller.toDoList).not.toBeDefined();
         });
 
         it('should return correct response for success case of IndexController.getList() method', function () {

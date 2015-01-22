@@ -13,15 +13,11 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', fun
        $scope.count++;
     };    
 
-    $scope.deleteTask = function () { 
-        var oldTasks = $scope.tasks;
-        $scope.tasks = [];
-
-        angular.forEach(oldTasks, function(task) {
-            if (!task.done)
+    $scope.deletecompletedTask = function () {   
+        angular.forEach($scope.tasks, function(task) {
+            if (task.done && $scope.count > 0)
             {
-                $scope.tasks.push(task);
-                if ($scope.count > 0)
+                $scope.tasks.splice($scope.tasks.indexOf(task), 1);              
                     $scope.count--;
             } 
         });
