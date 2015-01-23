@@ -1,15 +1,16 @@
 'use strict';
 
 
-angular.module('toDoList', [
+angular.module('gameApp', [
         'ngRoute',
-        'toDoList.filters',
-        'toDoList.services',
-        'toDoList.directives',
-        'toDoList.controllers'
+        'gameApp.filters',
+        'gameApp.services',
+        'gameApp.directives',
+        'gameApp.controllers'
     ]).
     config(['$routeProvider', function ($routeProvider) {
-        $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'IndexCtrl'});        
+        $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'IndexCtrl'});
+        $routeProvider.when('/game', {templateUrl: 'partials/game.html', controller: 'GameCtrl'});         
         $routeProvider.otherwise({redirectTo: '/'});
     }]);
 

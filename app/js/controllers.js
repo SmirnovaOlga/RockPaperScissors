@@ -2,26 +2,20 @@
 
 /* Controllers */
 
-var app = angular.module('toDoList.controllers', []);
+var app = angular.module('gameApp.controllers', []);
 app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http) {
    
-    $scope.tasks = [{"text" : "clean", "done" : false}];
-    $scope.count = 1;
+   
 
-    $scope.addTask = function () {         
-       $scope.tasks.push({"text" : $scope.newtask, "done" : false});
-       $scope.count++;
-    };    
+    $scope.click = function () {         
+       $location.path('/game');
+       console.log(choice);
+    };   
+  
 
-    $scope.deletecompletedTask = function () {   
-        angular.forEach($scope.tasks, function(task) {
-            if (task.done && $scope.count > 0)
-            {
-                $scope.tasks.splice($scope.tasks.indexOf(task), 1);              
-                    $scope.count--;
-            } 
-        });
-        
-    };    
+}]);
+
+app.controller('GameCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http) { 
+  
 
 }]);

@@ -2,7 +2,7 @@
 
 /* Directives */
 
-var app = angular.module('toDoList.directives', []);
+var app = angular.module('gameApp.directives', []);
 
 app.directive('appVersion', ['version', function(version) {
     return function(scope, elm, attrs) {

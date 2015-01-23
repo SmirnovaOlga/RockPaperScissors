@@ -1,21 +1,11 @@
-.to-do-list {
-	padding: 30px 14px;
-    margin-bottom: 14px;
-    background-color: #f7f7f9;
-    border: 1px solid #e1e1e8;
-    border-radius: 4px;
+.main-content {
+	text-align: center;	
 }
 
 .title {
-	padding: 10px 0;
+	padding: 50px 0;
 }
 
-.tasks-list li{
-	padding: 10px 0;
-	list-style-type: none;
-}
-
-.done-true {
-	text-decoration: line-through;
-}
-
+.choice {
+	height: 300px;
+}	

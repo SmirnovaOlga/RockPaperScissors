@@ -20,7 +20,7 @@ describe('toDoList', function () {
 
         it('should return correct response for success case of IndexController.getList() method', function () {
 
-            // $httpBackend
+            expect($scope.count).toequal('100');
         });
     })
 });
