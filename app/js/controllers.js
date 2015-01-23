@@ -5,17 +5,14 @@
 var app = angular.module('gameApp.controllers', []);
 app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http) {
    
+    $scope.choice = '';
    
 
-    $scope.click = function () {         
-       $location.path('/game');
-       console.log(choice);
+    $scope.choose = function ($event) {   
+        $scope.choice = angular.element($event.currentTarget)[0].id;   
+        $location.path('/game');     
+        console.log($scope.choice);
     };   
-  
-
-}]);
-
-app.controller('GameCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http) { 
   
 
 }]);

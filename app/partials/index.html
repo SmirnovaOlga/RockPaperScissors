@@ -1,15 +1,17 @@
 <div class="main-content">
-<h1 class="title"> Choose:</h1>
 
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default choice" ng-click="choice()">Rock</button>
+  <h1 class="title"> Choose:</h1>
+
+  <div class="btn-group btn-group-justified" role="group" aria-label="...">
+    <div class="btn-group" role="group">
+      <button type="button" id="rock" class="btn btn-default choice" ng-click="choose($event)">Rock</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" id="paper" class="btn btn-default choice" ng-click="choose($event)" >Paper</button>
+    </div>
+    <div class="btn-group" role="group">
+      <button type="button" id="scissors" class="btn btn-default choice" ng-click="choose($event)">Scissors</button>
+    </div>
   </div>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default choice" ng-click="choice()" >Paper</button>
-  </div>
-  <div class="btn-group" role="group">
-    <button type="button" class="btn btn-default choice" ng-click="choice()">Scissors</button>
-  </div>
-</div>
+
 </div>
