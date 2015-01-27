@@ -16,22 +16,22 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', 'pl
 
     $scope.choices = [
 	    {
-	    	id: 'rock',
+	    	id: '1',
 	    	title : 'rock'
 	    },
 	    {
-	    	id: 'scissors',
+	    	id: '2',
 	    	title : 'scissors'
     	},
     	{
-	    	id: 'paper',
+	    	id: '3',
 	    	title : 'paper'
     	},
     ];
 
-    $scope.choose = function (id) {   
+    $scope.choose = function (title) {   
      
-       index.player.choice = id;  
+       index.player.choice = title;  
        $location.path('/game');  
     };     
 
@@ -40,9 +40,14 @@ app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', 'pl
 app.controller('GameCtrl', ['$scope', '$routeParams', '$location', '$http', 'player', function ($scope, $routeParams, $location, $http, player) {
 	var game = this;
 
-	game.player = player;
+	game.player = player;	
 
-	console.log(game.player.choice);
-  
+	$scope.choicesArray= ['rock', 'scissors', 'paper'];
 
+	game.computerChoice = $scope.choicesArray[getRandomInt(1, 3)];
+
+	function getRandomInt(min, max) {
+
+  		return Math.floor(Math.random() * (max - min + 1)) + min;
+  	}
 }]);
