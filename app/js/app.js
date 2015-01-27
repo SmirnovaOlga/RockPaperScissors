@@ -10,7 +10,7 @@ angular.module('gameApp', [
     ]).
     config(['$routeProvider', function ($routeProvider) {
         $routeProvider.when('/', {templateUrl: 'partials/index.html', controller: 'IndexCtrl'});
-        $routeProvider.when('/game', {templateUrl: 'partials/game.html', controller: 'IndexCtrl'});         
+        $routeProvider.when('/game', {templateUrl: 'partials/game.html', controller: 'GameCtrl'});         
         $routeProvider.otherwise({redirectTo: '/'});
     }]);
 
