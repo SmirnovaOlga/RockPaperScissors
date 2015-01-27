@@ -1,11 +1,33 @@
-.main-content {
+.game-field {
 	text-align: center;	
 }
 
-.title {
+.choose-title {
 	padding: 50px 0;
 }
 
-.choice {
-	height: 300px;
-}	
+.game-field ul li{
+	list-style-type: none;
+	display: inline-block;
+}
+
+.rock {
+	width: 500px;
+	height: 552px;
+	margin: 0 10px;
+	background-image: url(../img/rock.jpg);
+}
+
+.scissors {
+	width: 500px;
+	height: 552px;
+	margin: 0 10px;
+	background-image: url(../img/scissors.jpg);
+}
+
+.paper {
+	width: 500px;
+	height: 552px;
+	margin: 0 10px;
+	background-image: url(../img/paper.jpg);
+}

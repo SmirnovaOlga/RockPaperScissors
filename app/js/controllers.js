@@ -9,24 +9,40 @@ app.service('player', function Player() {
     player.choice = 'Default';
   })
 
-app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http, player) {
-   
-      var index = this;
-      index.player = player;
-      console.log(index.player);
+app.controller('IndexCtrl', ['$scope', '$routeParams', '$location', '$http', 'player', function ($scope, $routeParams, $location, $http, player) {
 
-    $scope.choose = function ($event) {       
-       // index.player = angular.element($event.currentTarget)[0].id;   
-        console.log(index.player);
-       // $location.path('/game');  
+	var index = this;
+    index.player = player; 
+
+    $scope.choices = [
+	    {
+	    	id: 'rock',
+	    	title : 'rock'
+	    },
+	    {
+	    	id: 'scissors',
+	    	title : 'scissors'
+    	},
+    	{
+	    	id: 'paper',
+	    	title : 'paper'
+    	},
+    ];
+
+    $scope.choose = function (id) {   
+     
+       index.player.choice = id;  
+       $location.path('/game');  
     };     
 
 }]);
 
-app.controller('GameCtrl', ['$scope', '$routeParams', '$location', '$http', function ($scope, $routeParams, $location, $http, player) {
+app.controller('GameCtrl', ['$scope', '$routeParams', '$location', '$http', 'player', function ($scope, $routeParams, $location, $http, player) {
 	var game = this;
 
 	game.player = player;
+
+	console.log(game.player.choice);
   
 
 }]);

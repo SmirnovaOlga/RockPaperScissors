@@ -1,12 +1,11 @@
-<div class="main-content" ng-controller="GameCtrl as game">
-<h1 class="title"> Choose:</h1>
+<div class="game-field" ng-controller="GameCtrl as game">
+<h1 class="choose-title"> Choose:</h1>
 
-<div class="btn-group btn-group-justified" role="group" aria-label="...">
-    <div class="btn-group" role="group">
-      <button type="button" id="{{game.playerChoice.choice}}" class="btn btn-default choice"> {{game.playerChoice.choice}} </button>
-    </div>
-    <div class="btn-group" role="group">
-      <button type="button" id="paper" class="btn btn-default choice" >Paper</button>
-    </div>    
-  </div>
-  </div>
+<ul>
+    <li class="{{game.player.choice}}">
+    </li>
+    <li class="rock">
+    </li>
+</ul> 
+
+</div>
