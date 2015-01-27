@@ -1,11 +1,10 @@
 <div class="game-field" ng-controller="GameCtrl as game">
-<h1 class="choose-title"> Choose:</h1>
-
+<h1>{{ game.result }}</h1>
 <ul>
     <li class="{{game.player.choice}}">
     </li>
     <li class="{{ game.computerChoice }}">
     </li>
 </ul> 
-
+<a ng-href="#/"><button class="btn btn-info"> Play again </button></a>
 </div>

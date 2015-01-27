@@ -44,10 +44,19 @@ app.controller('GameCtrl', ['$scope', '$routeParams', '$location', '$http', 'pla
 
 	$scope.choicesArray= ['rock', 'scissors', 'paper'];
 
-	game.computerChoice = $scope.choicesArray[getRandomInt(1, 3)];
+	game.computerChoice = $scope.choicesArray[getRandomInt(0, 2)];
 
 	function getRandomInt(min, max) {
 
   		return Math.floor(Math.random() * (max - min + 1)) + min;
   	}
+
+  	if ((game.player.choice  == 'rock' && game.computerChoice == "scissors") || (game.player.choice  == 'scissors' && game.computerChoice == "paper") || (game.player.choice  == 'paper' && game.computerChoice == "rock"))
+  		game.result = "Player is winner!"
+  	else if (game.player.choice  == game.computerChoice)
+  		game.result = "Draw!"
+  	else 
+  		game.result = "Computer is winner!"
+  	
+
 }]);
